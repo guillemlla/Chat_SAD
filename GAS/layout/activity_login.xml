@@ -78,8 +78,7 @@
                             android:imeOptions="actionUnspecified"
                             android:inputType="phone"
                             android:maxLines="1"
-                            android:singleLine="true"
-                            android:text="10.0.2.2" />
+                            android:singleLine="true" />
 
                     </android.support.design.widget.TextInputLayout>
 

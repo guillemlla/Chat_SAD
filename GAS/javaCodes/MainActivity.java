@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
-        getSupportActionBar().setTitle("Conversations");
+        getSupportActionBar().setTitle("GAS");
 
 
         listaMensages = (ListView) findViewById(R.id.chatListView);

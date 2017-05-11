@@ -172,7 +172,7 @@ public class Login extends AppCompatActivity {
 
             }else{
                 usernameView.setText("");
-                ipView.setText("10.0.2.2");
+                ipView.setText("");
                 errorText.setText("Username not avaiable");
             }
         }
