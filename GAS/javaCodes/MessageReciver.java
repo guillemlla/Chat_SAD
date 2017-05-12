@@ -46,7 +46,7 @@ public class MessageReciver extends Thread {
                         a.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                c.getMyMessages().add(m);
+                                c.putMessage(m);
                                 ListView listaMensages = (ListView) a.findViewById(R.id.chatListView);
                                 adapter.notifyDataSetChanged();
                                 listaMensages.invalidateViews();

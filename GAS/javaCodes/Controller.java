@@ -1,6 +1,9 @@
 package com.example.guillemllados.chatv3;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Created by guillemllados on 9/5/17.
@@ -10,7 +13,7 @@ public class Controller {
 
     private MySocket s;
     private ArrayList<User> users;
-    private ArrayList<MyMessage> myMessages;
+    private ConcurrentHashMap<Integer,MyMessage> myMessages;
     private User me;
     private MessageReciver messageReciver;
 
@@ -19,8 +22,9 @@ public class Controller {
     public Controller(){
         c = this;
         users = new ArrayList<User>();
-        myMessages = new ArrayList<MyMessage>();
+        myMessages = new ConcurrentHashMap<Integer,MyMessage>();
         //initialize();
+
 
     }
 
@@ -39,7 +43,13 @@ public class Controller {
     public ArrayList<User> getUsers() {
         return users;
     }
-    public ArrayList<MyMessage> getMyMessages() {
+    /*public ArrayList<MyMessage> getMyMessages() {
+        return myMessages.values();
+    }*/
+    public void putMessage(MyMessage m){
+        myMessages.put(myMessages.size(),m);
+    }
+    public ConcurrentHashMap<Integer,MyMessage> getMyMessages(){
         return myMessages;
     }
 
@@ -51,15 +61,15 @@ public class Controller {
         User u4 = new User("pere");
 
         MyMessage m = new MyMessage(u1,"Hola");
-        myMessages.add(m);
+        putMessage(m);
         m = new MyMessage(me,"Que tal");
-        myMessages.add(m);
+        putMessage(m);
         m = new MyMessage(u2,"Com vas?");
-        myMessages.add(m);
+        putMessage(m);
         m = new MyMessage(u3,"Molt be");
-        myMessages.add(m);
+        putMessage(m);
         m = new MyMessage(u1,"HEHEHEHE");
-        myMessages.add(m);
+        putMessage(m);
 
     }
 
