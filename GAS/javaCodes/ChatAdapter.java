@@ -47,8 +47,7 @@ public class ChatAdapter extends BaseAdapter {
         MyMessage e = this.getItem(position);
 
         if (true){
-            //convertView == null) {
-            // Create a new view into the list.
+
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             if(e.getUser().getUsername().equals(Controller.c.getMe().getUsername())){
